@@ -1,0 +1,17 @@
+.example-spacer{
+    flex : 1 1 auto;
+}
+mat-toolbar{
+    height: 8%;
+}
+mat-sidenav-container{
+    height: 92%;
+}
+mat-list-item{
+    color: lightblue;
+}
+.arrow{
+    position: absolute;
+    bottom: 5px;
+    right: 3px;
+}

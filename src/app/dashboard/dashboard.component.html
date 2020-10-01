@@ -1,0 +1,38 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="openedMenu = !openedMenu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+  
+  <mat-sidenav-container>
+    <mat-sidenav mode="side" [(opened)]="openedMenu" [@onSideNavChange]="sidenavChange ? 'open' : 'close'">
+      <mat-list >
+        <mat-list-item >
+            <mat-icon [@animateText]="textChange ? 'hide' : 'show'">view_list</mat-icon>
+            <span [@animateText]="textChange ? 'show' : 'hide'">Password list</span>
+        </mat-list-item>
+        <mat-list-item>
+            <mat-icon [@animateText]="textChange ? 'hide' : 'show'">note_add</mat-icon>
+            <span [@animateText]="textChange ? 'show' : 'hide'">Add Password</span>
+        </mat-list-item>
+        <mat-list-item>
+            <mat-icon [@animateText]="textChange ? 'hide' : 'show'">phone_in_talk</mat-icon>
+            <span [@animateText]="textChange ? 'show' : 'hide'">Contact</span>
+        </mat-list-item>
+      </mat-list>
+      <button mat-icon-button class="arrow" (click)="changeSideNav()">
+          <mat-icon *ngIf="!sidenavChange">fast_forward</mat-icon>
+          <mat-icon *ngIf="sidenavChange">fast_rewind</mat-icon>
+      </button>
+    </mat-sidenav>
+    <mat-sidenav-content [@onMainContentChange]="contentChange ? 'open' : 'close'">Main content</mat-sidenav-content>
+  </mat-sidenav-container>
+  
